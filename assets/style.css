@@ -1,0 +1,301 @@
+/*==============================================
+# Written By Chike Egbuna For SiteHUB Agency Ltd
+# Last Updated: 28th June 2025
+===============================================*/
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #0e101c;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #1a1c2c;
+    padding: 20px 40px;
+    border-bottom: 2px solid #00e5ff;
+  }
+
+  #theme-switcher {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  header img {
+    height: 50px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 28px;
+  }
+
+  #main-container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  #location-selector {
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .location-button {
+   display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    background: #2a2e4c;
+    color: #ffffff;
+    border: 1px solid #00e5ff55;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    min-width: 240px;
+    max-width: 300px;
+  }
+
+  .location-button.active {
+    background: #00e5ff;
+    color: #000000;
+    font-weight: bold;
+  }
+
+  .flag-left {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .location-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 1.2;
+    gap: 2px; /* tightens spacing */
+  }
+
+  .location-label strong {
+    font-size: 15px;
+  }
+
+  .location-label small {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+
+  #action-pane {
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  #action-pane input {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+    background: #2a2e4c;
+    color: #ffffff;
+  }
+
+  #action-pane button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #00e5ff;
+    color: #000000;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  #output-box {
+    background: #1f2235;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #00e5ff33;
+    box-shadow: 0 0 10px #00e5ff22;
+    display: none;
+    transition: all 0.3s ease;
+  }
+
+  .output {
+    background: #000;
+    color: lime;
+    padding: 10px;
+    min-height: 100px;
+    max-height: 500px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+
+  .download-buttons {
+    margin-top: 15px;
+    text-align: center;
+  }
+
+  .download-buttons a {
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 12px;
+    background: #00e5ff;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  .modal-content {
+    background-color: #1f2235;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #00e5ff;
+    width: 400px;
+    color: #ffffff;
+    border-radius: 8px;
+    position: relative;
+  }
+
+  .modal-content .close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #00e5ff;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Theme Overrides: Light Mode */
+  [data-theme="light"] body {
+    background: #f7f7f7;
+    color: #222;
+  }
+
+  [data-theme="light"] header {
+    background: #ffffff;
+    border-bottom: 2px solid #007acc;
+  }
+
+  [data-theme="light"] footer {
+    color: #222;
+  }
+
+  [data-theme="light"] footer a {
+    color: #007acc;
+  }
+
+  [data-theme="light"] #action-pane input {
+    background: #ffffff;
+    color: #222;
+    border: 1px solid #ccc;
+  }
+
+  [data-theme="light"] #action-pane button {
+    background: #007acc;
+    color: #ffffff;
+  }
+
+  [data-theme="light"] #output-box {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #ccc;
+  }
+
+  [data-theme="light"] .output {
+    background: #f1f1f1;
+    color: #222;
+  }
+
+  [data-theme="light"] .download-buttons a {
+    background: #007acc;
+    color: #fff;
+  }
+
+  [data-theme="light"] .location-button {
+    background: #ffffff;
+    color: #222;
+    border: 1px solid #007acc55;
+  }
+
+  [data-theme="light"] .location-button.active {
+    background: #007acc;
+    color: #fff;
+  }
+
+  /* Footer styles */
+  .footer-link {
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+  }
+
+  [data-theme="dark"] .footer-link {
+    color: #00e5ff;
+  }
+
+  [data-theme="light"] .footer-link {
+    color: #005a9e;
+  }
+
+  .footer-link:hover {
+    opacity: 0.85;
+    text-decoration: none;
+  }
+
+  .footer-signature {
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .footer-signature:hover {
+    opacity: 0.85;
+  }
+
+  .sitehub-green {
+    color: #00cc66;
+  }
+
+  .sitehub-blue {
+    color: #3399ff;
+  }
+
+  [data-theme="light"] .sitehub-green {
+    color: #00aa33;
+  }
+
+  [data-theme="light"] .sitehub-blue {
+    color: blue;
+  }
